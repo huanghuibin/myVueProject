@@ -1,9 +1,8 @@
 import axios from '../axios'
 
-export const getMenu = data => {
+export const findMenuTree = () => {
   return axios({
     url: '/menu/findTree',
-    method: 'post',
-    data
+    method: 'get'
   })
 }

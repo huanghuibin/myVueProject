@@ -12,6 +12,7 @@ Vue.config.productionTip = false
 /* eslint-disable no-new */
 Vue.use(ElementUI)
 Vue.use(api)
+// eslint-disable-next-line no-undef
 new Vue({
   el: '#app',
   router,
