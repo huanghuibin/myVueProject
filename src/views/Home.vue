@@ -1,39 +1,34 @@
 <template>
-    <div class="page">
-      <H2>Home page</H2>
-      <el-button @click="test()">11</el-button>
-      <el-button @click="mock()">mockTest</el-button>
-    </div>
+  <div class="container">
+    <!-- 导航菜单栏 -->
+    <MenuBar></MenuBar>
+    <!-- 头部区域 -->
+    <HeadBar></HeadBar>
+    <!-- 主内容区域 -->
+    <Main></Main>
+  </div>
 </template>
 
 <script>
-import axios from 'axios'
-import mock from '@/mock/mock.js'
+// eslint-disable-next-line no-unused-vars
+import mock from '@/mock/index.js'
+import HeadBar from './HeadBar/HeadBar'
+import Main from './Main/Main'
+import MenuBar from './MenuBar/MenuBar'
 export default {
-  name: 'Home',
-  methods: {
-    test () {
-      // eslint-disable-next-line no-undef
-      axios.get('http://localhost:8081/#/')
-        .then(function (res) {
-          alert(res.data)
-        }).catch(function (res) {
-          alert(res)
-        })
-    },
-    mock () {
-      // eslint-disable-next-line no-undef
-      axios.get('http://localhost:8080/user')
-        .then(function (res) {
-          alert(JSON.stringify(res.data))
-        }).catch(function (res) {
-          alert(res)
-        })
-    }
+  components: {
+    HeadBar,
+    Main,
+    MenuBar
   }
 }
 </script>
-
-<style scoped>
-
+<style scoped lang="scss">
+  .container {
+    position:absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    background: #4b5f6e;
+  }
 </style>
