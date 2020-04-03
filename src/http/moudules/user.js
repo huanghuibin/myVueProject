@@ -1,35 +1,28 @@
 import axios from '../axios'
-
-export const getUser = () => {
-  return axios({
-    url: '/user',
-    method: 'get'
-  })
-}
 /*
  * 用户管理模块
  */
 
 // 保存
-export const save = (params) => {
+export const save = (data) => {
   return axios({
     url: '/user/save',
     method: 'post',
-    params
+    data
   })
 }// 删除
-export const del = (params) => {
+export const del = (data) => {
   return axios({
     url: '/user/delete',
     method: 'post',
-    params
+    data
   })
 }
 // 分页查询
-export const findPage = (params) => {
+export const findPage = (data) => {
   return axios({
     url: '/user/findPage',
     method: 'post',
-    params
+    data
   })
 }

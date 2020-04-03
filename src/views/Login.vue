@@ -26,7 +26,7 @@ export default {
       logining: false,
       loginForm: {
         account: 'admin',
-        password: '123456'
+        password: 'admin'
       },
       fieldRules: {
         account: [{
@@ -42,7 +42,7 @@ export default {
   methods: {
     login () {
       let userInfo = {account: this.loginForm.account, password: this.loginForm.password}
-      this.$api.login.login(JSON.stringify(userInfo)).then((res) => {
+      this.$api.login.login(userInfo).then((res) => {
         alert(res.data.token)
         Cookies.set('token', res.data.token) // 放置token到Cookie
         sessionStorage.setItem('user', userInfo.account)

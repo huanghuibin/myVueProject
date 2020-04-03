@@ -216,9 +216,9 @@ const menuTreeData = {
     }
   ]
 }
-export function findTree () {
+export function findNavTree () {
   return {
-    url: 'http://localhost:8080/menu/findTree',
+    url: '/menu/findNavTree',
     type: 'get',
     data: menuTreeData
   }

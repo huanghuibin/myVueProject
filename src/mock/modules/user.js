@@ -1,21 +1,3 @@
-// 获取用户信息
-export function getUser () {
-  return {
-    url: 'http://localhost:8080/user',
-    type: 'get',
-    data: {
-      'msg': 'success',
-      'code': 0,
-      'data': {
-        'id': '@increment',
-        'name': '@name', // 随机生成姓名
-        'email': '@email', // 随机生成姓名
-        'age|10-20': 12
-        // 其他数据
-      }
-    }
-  }
-}
 /*
  * 用户管理模块
  */
@@ -23,7 +5,7 @@ export function getUser () {
 // 保存
 export function save () {
   return {
-    url: 'http://localhost:8080/user/save',
+    url: '/user/save',
     type: 'post',
     data: {
       'code': 200,
@@ -34,7 +16,19 @@ export function save () {
 }// 删除
 export function del () {
   return {
-    url: 'http://localhost:8080/user/delete',
+    url: '/user/delete',
+    type: 'post',
+    data: {
+      'code': 200,
+      'msg': null,
+      'data': 1
+    }
+  }
+}
+// 批量删除
+export function batchDelete () {
+  return {
+    url: 'user/delete',
     type: 'post',
     data: {
       'code': 200,
@@ -75,7 +69,7 @@ findPageData.data.content = content
 // 分页查询
 export function findPage () {
   return {
-    url: 'http://localhost:8080/user/findPage',
+    url: '/user/findPage',
     type: 'post',
     data: findPageData
   }
